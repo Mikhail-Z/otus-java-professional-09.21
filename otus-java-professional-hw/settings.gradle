@@ -7,6 +7,6 @@
  * in the user manual at https://docs.gradle.org/7.2/userguide/multi_project_builds.html
  */
 
-rootProject.name = 'L01-gradle'
+rootProject.name = 'otus-java-professional-hw'
 include 'hw01-gradle'
 

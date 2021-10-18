@@ -1,6 +1,5 @@
 plugins {
     id "idea"
-    id "java"
     id "io.spring.dependency-management" version "1.0.11.RELEASE"
     id "com.github.johnrengelman.shadow" version "6.1.0" apply false
 }
@@ -12,14 +11,11 @@ allprojects {
         mavenCentral()
     }
 
-    java.sourceCompatibility = JavaVersion.VERSION_16
-    java.targetCompatibility = JavaVersion.VERSION_16
-
     apply plugin: "io.spring.dependency-management"
 
     dependencyManagement {
         dependencies {
-            dependency "com.google.guava:guava:30.1.1-jre"
+            dependency "com.google.guava:guava:${Versions.guava}"
         }
     }
 }
