@@ -3,7 +3,7 @@ package com.company;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Customer implements Comparable<Customer> {
+public class Customer {
     private final long id;
     private String name;
     private long scores;
@@ -60,17 +60,5 @@ public class Customer implements Comparable<Customer> {
     @Override
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
-    }
-
-    @Override
-    public int compareTo(Customer c) {
-        var diff = this.getScores() - c.getScores();
-        if (diff < 0) {
-            return -1;
-        } else if (diff > 0) {
-            return 1;
-        } else {
-            return 0;
-        }
     }
 }
