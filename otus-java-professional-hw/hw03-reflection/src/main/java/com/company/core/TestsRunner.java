@@ -5,26 +5,51 @@ import com.company.annotations.Before;
 import com.company.annotations.Test;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static com.company.utils.Utils.getMethodAnnotatedWith;
 import static com.company.utils.Utils.getMethodsAnnotatedWith;
 
-
-
 public class TestsRunner {
 
     private final Map<String, TestResult> testResults = new HashMap<>();
-    private Object testClassInstance;
-
+    private List<Object> testClassInstances = new ArrayList<>();
+    private List<Method> testMethods;
+    private Class<?> testClass;
     private TestsRunner() {
     }
 
-    public TestsRunner(Object testClassInstance) {
-        this.testClassInstance = testClassInstance;
+    public TestsRunner(Class<?> testClass) throws ClassNotFoundException {
+        this.testClass = testClass;
+        testMethods = getMethodsAnnotatedWith(testClass, Test.class);
+        IntStream.range(0, testMethods.size())
+                .forEach(i -> {
+                    try {
+                        Object testClassInstance = testClass.getDeclaredConstructor().newInstance();
+                        testClassInstances.add(testClassInstance);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    testResults.put(testMethods.get(i).getName(), TestResult.NOT_STARTED);
+                });
+    }
+
+    public TestsRunner(String fullClassName) throws ClassNotFoundException {
+        this(Class.forName(fullClassName));
+    }
+
+    //for using mock test class instances
+    public void setTestClassInstances(Object... testClassInstances) {
+        if (testClassInstances.length != this.testClassInstances.size())
+            throw new IllegalArgumentException("number of test class instances is not equal to number of test methods");
+        IntStream.range(0, this.testClassInstances.size())
+                .forEach(i -> {
+                    this.testClassInstances.set(i, testClassInstances[i]);
+                });
     }
 
     public Map<String, TestResult> getTestResults() {
@@ -32,43 +57,44 @@ public class TestsRunner {
     }
 
     public void run() {
-        if (testClassInstance == null) throw new IllegalStateException("test class is not set");
+        var setUpMethod = getMethodAnnotatedWith(testClass, Before.class);
+        var tearDownMethod = getMethodAnnotatedWith(testClass, After.class);
 
-        var setUpMethod = getMethodAnnotatedWith(testClassInstance.getClass(), Before.class);
-        var testMethods = getMethodsAnnotatedWith(testClassInstance.getClass(), Test.class);
-        var tearDownMethod = getMethodAnnotatedWith(testClassInstance.getClass(), After.class);
-
-
-        testMethods.forEach(m -> testResults.put(m.getName(), TestResult.NOT_STARTED));
-        testMethods.forEach(m -> {
+        for (int i = 0; i < testMethods.size(); i++) {
             try {
-                if (setUpMethod != null) invokeBeforeOrAfterMethod(testClassInstance, setUpMethod);
+                if (setUpMethod != null) invokeBeforeOrAfterMethod(testClassInstances.get(i), setUpMethod);
             }
             catch (Exception e) {
                 e.printStackTrace();
                 return;
             }
 
+            var method = testMethods.get(i);
             try {
-                m.setAccessible(true);
-                m.invoke(testClassInstance);
-                testResults.put(m.getName(), TestResult.SUCCESS);
+                method.setAccessible(true);
+                method.invoke(testClassInstances.get(i));
+                testResults.put(method.getName(), TestResult.SUCCESS);
             } catch (Exception e) {
-                testResults.put(m.getName(), TestResult.FAILED);
+                testResults.put(method.getName(), TestResult.FAILED);
                 e.printStackTrace();
             } finally {
                 try {
-                    if (tearDownMethod != null) invokeBeforeOrAfterMethod(testClassInstance, tearDownMethod);
+                    if (tearDownMethod != null) invokeBeforeOrAfterMethod(testClassInstances.get(i), tearDownMethod);
                 } catch (Exception e) {
-                    testResults.put(m.getName(), TestResult.SUCCESS_WITH_FAILED_TEAR_DOWN);
+                    testResults.put(method.getName(), TestResult.SUCCESS_WITH_FAILED_TEAR_DOWN);
                     e.printStackTrace();
                 }
             }
-        });
+        }
     }
 
     public void printResults() {
-        System.out.printf("All tests passed: %b%n", areAllTestsSuccess());
+        var allTestsNumber = testResults.values().size();
+        var successTestsNumber = testResults.values()
+                .stream()
+                .filter(r -> r == TestResult.SUCCESS)
+                .count();
+        System.out.printf("passed %d/%d tests%n", successTestsNumber, allTestsNumber);
         testResults.forEach((key, value) -> System.out.printf("%-30s %s%n", key, value));
     }
 

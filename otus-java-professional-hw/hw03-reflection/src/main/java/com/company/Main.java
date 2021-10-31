@@ -5,7 +5,14 @@ import com.company.testexamples.TestExample;
 
 public class Main {
     public static void main(String[] args) {
-        var runner = new TestsRunner(new TestExample());
+        TestsRunner runner = null;
+        try {
+            runner = new TestsRunner(TestExample.class);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            return;
+        }
+
         runner.run();
         runner.printResults();
     }
