@@ -1,6 +1,6 @@
 package com.company.data;
 
-import com.company.annotations.Test;
+import com.company.testframework.annotations.Test;
 
 public class ClassWithAllSuccessTestsWithoutSetUpsOrTearDowns {
     @Test

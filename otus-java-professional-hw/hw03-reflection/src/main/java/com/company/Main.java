@@ -1,19 +1,11 @@
 package com.company;
 
-import com.company.core.TestsRunner;
 import com.company.testexamples.TestExample;
+import com.company.testframework.print.DefaultTestsResultPrinter;
 
 public class Main {
-    public static void main(String[] args) {
-        TestsRunner runner = null;
-        try {
-            runner = new TestsRunner(TestExample.class);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            return;
-        }
-
-        runner.run();
-        runner.printResults();
+    public static void main(String[] args) throws NoSuchMethodException {
+        var printer = new DefaultTestsResultPrinter();
+        TestsExecution.execute(TestExample.class, printer);
     }
 }

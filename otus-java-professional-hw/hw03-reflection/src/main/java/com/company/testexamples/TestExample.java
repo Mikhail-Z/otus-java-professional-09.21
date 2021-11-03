@@ -1,8 +1,8 @@
 package com.company.testexamples;
 
-import com.company.annotations.After;
-import com.company.annotations.Before;
-import com.company.annotations.Test;
+import com.company.testframework.annotations.After;
+import com.company.testframework.annotations.Before;
+import com.company.testframework.annotations.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.*;
 
 public class TestExample {

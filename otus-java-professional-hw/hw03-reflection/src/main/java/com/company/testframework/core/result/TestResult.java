@@ -1,4 +1,4 @@
-package com.company.core;
+package com.company.testframework.core.result;
 
 public enum TestResult {
     SUCCESS,
