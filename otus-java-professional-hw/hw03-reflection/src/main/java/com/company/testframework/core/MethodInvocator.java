@@ -1,9 +1,5 @@
 package com.company.testframework.core;
 
-import com.company.testframework.core.result.TestResult;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class MethodInvocator {
