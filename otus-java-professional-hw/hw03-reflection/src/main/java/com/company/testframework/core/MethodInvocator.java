@@ -3,12 +3,24 @@ package com.company.testframework.core;
 import com.company.testframework.core.result.TestResult;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class TestInvocator {
-    public TestResult invoke(Constructor<?> constructor, Method setUpMethod, Method testMethod, Method tearDownMethod) throws Exception {
+public class MethodInvocator {
+    public boolean invoke(Object testClassInstance, Method method) {
+        method.setAccessible(true);
+        try {
+            method.invoke(testClassInstance);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
-        var testClassInstance = constructor.newInstance();
+
+    /*public TestResult invoke(Object testClassInstance, Method setUpMethod, Method testMethod, Method tearDownMethod) throws Exception {
+
         try {
             if (setUpMethod != null) {
                 invokeBeforeOrAfterMethod(testClassInstance, setUpMethod);
@@ -72,5 +84,5 @@ public class TestInvocator {
         public InvalidMethodException(String message) {
             super(message);
         }
-    }
+    }*/
 }
