@@ -13,3 +13,4 @@ include 'hw02-generics'
 include 'hw03-reflection'
 
 include 'hw05-byte-code'
+include 'hw06-solid'
