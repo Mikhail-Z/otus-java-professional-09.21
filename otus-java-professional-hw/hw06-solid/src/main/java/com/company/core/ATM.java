@@ -1,5 +1,6 @@
 package com.company.core;
 
+import com.company.core.exceptions.AtmException;
 import com.company.core.models.BankNote;
 import com.company.core.models.BankNoteDenomination;
 import com.company.core.providers.Printer;
@@ -38,7 +39,7 @@ public class ATM {
 
         try {
             bankProviderOptional.get().deposit(accountNumber, amount);
-        } catch (Exception e) {
+        } catch (AtmException e) {
             printer.printErrorMessage(e.getMessage());
             return;
         }
@@ -59,7 +60,7 @@ public class ATM {
         }
         try {
             bankProviderOptional.get().passOff(accountNumber, moneyAmount);
-        } catch (Exception e) {
+        } catch (AtmException e) {
             printer.printErrorMessage(e.getMessage());
             return;
         }
@@ -67,7 +68,7 @@ public class ATM {
         List<BankNote> bankNotes = null;
         try {
             bankNotes = bankNotesManager.take(moneyAmount);
-        } catch (Exception e) {
+        } catch (AtmException e) {
             printer.printErrorMessage(e.getMessage());
             return;
         }
@@ -86,7 +87,7 @@ public class ATM {
         try {
             var balance = bankProviderOptional.get().checkBalance(accountNumber);
             printer.printBalance(balance);
-        } catch (Exception e) {
+        } catch (AtmException e) {
             printer.printErrorMessage(e.getMessage());
         }
     }

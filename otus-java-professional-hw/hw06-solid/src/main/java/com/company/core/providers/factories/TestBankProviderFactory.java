@@ -5,10 +5,10 @@ import com.company.core.providers.BankProvider;
 import java.util.Optional;
 import java.util.Set;
 
-public class DefaultBankProviderFactory implements BankProviderFactory {
+public class TestBankProviderFactory implements BankProviderFactory {
     private final Set<BankProvider> bankProviders;
 
-    public DefaultBankProviderFactory(Set<BankProvider> bankProviders) {
+    public TestBankProviderFactory(Set<BankProvider> bankProviders) {
         this.bankProviders = bankProviders;
     }
 

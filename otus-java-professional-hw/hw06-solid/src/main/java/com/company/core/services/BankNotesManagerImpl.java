@@ -1,16 +1,17 @@
 package com.company.core.services;
 
 import com.company.core.BankNotesCell;
+import com.company.core.exceptions.AtmException;
 import com.company.core.models.BankNote;
 import com.company.core.models.BankNoteDenomination;
 
 import java.math.BigDecimal;
 import java.util.*;
 
-public class DefaultBankNotesManager implements BankNotesManager {
+public class BankNotesManagerImpl implements BankNotesManager {
     private final Map<BankNoteDenomination, BankNotesCell> bankNotesCells = new HashMap<>();
 
-    public DefaultBankNotesManager(Set<BankNoteDenomination> uniqueBankNoteDenominations) {
+    public BankNotesManagerImpl(Set<BankNoteDenomination> uniqueBankNoteDenominations) {
         uniqueBankNoteDenominations.forEach(bankNoteDenomination -> {
             bankNotesCells.put(bankNoteDenomination, new BankNotesCell());
         });
@@ -23,9 +24,9 @@ public class DefaultBankNotesManager implements BankNotesManager {
     }
 
     @Override
-    public List<BankNote> take(BigDecimal moneyAmount) throws Exception {
+    public List<BankNote> take(BigDecimal moneyAmount) {
         if (!checkEnoughMoney(moneyAmount)) {
-            throw new Exception("not enough money for required amount");
+            throw new AtmException("not enough money for required amount");
         }
 
         return getBankNotesCombination(moneyAmount);
@@ -37,7 +38,7 @@ public class DefaultBankNotesManager implements BankNotesManager {
             getBankNotesCounterOfDenomination(moneyAmount);
             return true;
         }
-        catch (Exception e) {
+        catch (AtmException e) {
             return false;
         }
     }
@@ -59,7 +60,7 @@ public class DefaultBankNotesManager implements BankNotesManager {
         return false;
     }
 
-    private List<BankNote> getBankNotesCombination(BigDecimal amount) throws Exception {
+    private List<BankNote> getBankNotesCombination(BigDecimal amount) {
         var bankNotesCounterByDenomination = getBankNotesCounterOfDenomination(amount);
         final List<BankNote> bankNotes = new LinkedList<>();
         bankNotesCounterByDenomination.keySet().forEach(denomination -> {
@@ -71,7 +72,7 @@ public class DefaultBankNotesManager implements BankNotesManager {
         return bankNotes;
     }
 
-    private Map<BankNoteDenomination, Integer> getBankNotesCounterOfDenomination(BigDecimal amount) throws Exception {
+    private Map<BankNoteDenomination, Integer> getBankNotesCounterOfDenomination(BigDecimal amount) {
         BigDecimal commonSum = BigDecimal.valueOf(0);
         Map<BankNoteDenomination, Integer> counter = new HashMap<>();
         for (BankNoteDenomination denomination : bankNotesCells.keySet()) {
@@ -90,7 +91,7 @@ public class DefaultBankNotesManager implements BankNotesManager {
         }
 
         if (commonSum.compareTo(amount) != 0) {
-            throw new Exception("can't find banknotes combination for your sum");
+            throw new AtmException("can't find banknotes combination for your sum");
         }
 
         return counter;

@@ -1,5 +1,7 @@
 package com.company.core.providers;
 
+import com.company.core.exceptions.AtmException;
+
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,27 +21,26 @@ public class TestBankProvider implements BankProvider {
         } else {
             map.computeIfAbsent(accountNumber, accNum -> moneyAmount);
         }
-
     }
 
     @Override
-    public void passOff(String accountNumber, BigDecimal moneyAmount) throws Exception {
+    public void passOff(String accountNumber, BigDecimal moneyAmount) {
         if (map.containsKey(accountNumber)) {
             if (map.get(accountNumber).compareTo(moneyAmount) < 0) {
-                throw new Exception("not enough money on account");
+                throw new AtmException("not enough money on account");
             }
 
             map.computeIfPresent(accountNumber, (__, currentSum) -> currentSum.subtract(moneyAmount));
         } else {
-            throw new Exception("no such account");
+            throw new AtmException("no such account");
         }
     }
 
     @Override
-    public BigDecimal checkBalance(String accountNumber) throws Exception {
+    public BigDecimal checkBalance(String accountNumber) {
         var balance = map.get(accountNumber);
         if (balance == null) {
-            throw new Exception("no such account");
+            throw new AtmException("no such account");
         }
 
         return balance;
