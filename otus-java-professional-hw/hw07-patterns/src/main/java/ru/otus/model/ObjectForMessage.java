@@ -1,11 +1,11 @@
 package ru.otus.model;
 
-import ru.otus.processor.Copyable;
+import ru.otus.processor.homework.Copyable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ObjectForMessage implements Copyable {
+public class ObjectForMessage implements Copyable<ObjectForMessage> {
     private List<String> data;
 
     public List<String> getData() {
@@ -17,7 +17,7 @@ public class ObjectForMessage implements Copyable {
     }
 
     @Override
-    public Copyable deepCopy() {
+    public ObjectForMessage deepCopy() {
         var objectForMessage = new ObjectForMessage();
         objectForMessage.data = new ArrayList<>(data);
         return objectForMessage;

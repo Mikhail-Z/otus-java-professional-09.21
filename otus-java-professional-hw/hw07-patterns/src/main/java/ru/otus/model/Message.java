@@ -1,8 +1,8 @@
 package ru.otus.model;
 
-import ru.otus.processor.Copyable;
+import ru.otus.processor.homework.Copyable;
 
-public class Message implements Copyable {
+public class Message implements Copyable<Message> {
     private final long id;
     private final String field1;
     private final String field2;
@@ -129,8 +129,8 @@ public class Message implements Copyable {
     }
 
     @Override
-    public Copyable deepCopy() {
-        return toBuilder().field13((ObjectForMessage) field13.deepCopy()).build();
+    public Message deepCopy() {
+        return toBuilder().field13(field13.deepCopy()).build();
     }
 
     public static class Builder {

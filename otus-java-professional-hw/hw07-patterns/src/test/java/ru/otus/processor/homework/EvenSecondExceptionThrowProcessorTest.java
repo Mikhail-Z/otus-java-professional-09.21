@@ -1,8 +1,10 @@
-package ru.otus.processor;
+package ru.otus.processor.homework;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import ru.otus.model.Message;
+import ru.otus.processor.homework.EvenSecondException;
+import ru.otus.processor.homework.EvenSecondExceptionThrowProcessor;
+import ru.otus.processor.homework.TimeProvider;
 
 import java.time.LocalTime;
 

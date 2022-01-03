@@ -3,9 +3,9 @@ package ru.otus;
 import ru.otus.handler.ComplexProcessor;
 import ru.otus.listener.ListenerPrinterConsole;
 import ru.otus.model.Message;
-import ru.otus.processor.LoggerProcessor;
-import ru.otus.processor.ProcessorConcatFields;
-import ru.otus.processor.ProcessorUpperField10;
+import ru.otus.processor.homework.LoggerProcessor;
+import ru.otus.processor.homework.ProcessorConcatFields;
+import ru.otus.processor.homework.ProcessorUpperField10;
 
 import java.util.List;
 

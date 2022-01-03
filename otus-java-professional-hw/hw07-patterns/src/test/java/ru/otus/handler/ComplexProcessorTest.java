@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.otus.model.Message;
 import ru.otus.listener.Listener;
-import ru.otus.processor.Processor;
+import ru.otus.processor.homework.Processor;
 
 import java.util.ArrayList;
 import java.util.List;
