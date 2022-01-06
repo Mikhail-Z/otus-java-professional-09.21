@@ -1,8 +1,8 @@
 package ru.otus.jdbc.mapper;
 
-import ru.otus.core.repository.DataTemplate;
-import ru.otus.core.repository.DataTemplateException;
-import ru.otus.core.repository.executor.DbExecutor;
+import ru.otus.jdbc.mapper.core.repository.DataTemplate;
+import ru.otus.jdbc.mapper.core.repository.DataTemplateException;
+import ru.otus.jdbc.mapper.core.repository.executor.DbExecutor;
 import ru.otus.jdbc.mapper.utils.FieldValuesExtractor;
 import ru.otus.jdbc.mapper.utils.ResultSetMapper;
 import ru.otus.jdbc.mapper.metadata.EntitySQLMetaData;

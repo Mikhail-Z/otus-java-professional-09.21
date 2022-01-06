@@ -1,10 +1,10 @@
-package ru.otus.crm.service;
+package ru.otus.jdbc.demo.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.otus.core.repository.DataTemplate;
-import ru.otus.crm.model.Client;
-import ru.otus.core.sessionmanager.TransactionRunner;
+import ru.otus.jdbc.mapper.core.repository.DataTemplate;
+import ru.otus.jdbc.demo.model.Client;
+import ru.otus.jdbc.mapper.core.sessionmanager.TransactionRunner;
 
 import java.util.List;
 import java.util.Optional;

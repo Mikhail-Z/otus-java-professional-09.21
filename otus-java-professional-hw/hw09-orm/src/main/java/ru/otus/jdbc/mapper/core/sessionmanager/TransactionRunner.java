@@ -1,4 +1,4 @@
-package ru.otus.core.sessionmanager;
+package ru.otus.jdbc.mapper.core.sessionmanager;
 
 public interface TransactionRunner {
 

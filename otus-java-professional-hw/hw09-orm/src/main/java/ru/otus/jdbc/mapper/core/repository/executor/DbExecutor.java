@@ -1,4 +1,4 @@
-package ru.otus.core.repository.executor;
+package ru.otus.jdbc.mapper.core.repository.executor;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

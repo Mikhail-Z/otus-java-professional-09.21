@@ -1,15 +1,15 @@
-package ru.otus;
+package ru.otus.jdbc.demo;
 
 import org.flywaydb.core.Flyway;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.otus.core.repository.executor.DbExecutorImpl;
-import ru.otus.core.sessionmanager.TransactionRunnerJdbc;
-import ru.otus.crm.datasource.DriverManagerDataSource;
-import ru.otus.crm.model.Client;
-import ru.otus.crm.model.Manager;
-import ru.otus.crm.service.DbServiceClientImpl;
-import ru.otus.crm.service.DbServiceManagerImpl;
+import ru.otus.jdbc.mapper.core.repository.executor.DbExecutorImpl;
+import ru.otus.jdbc.mapper.core.sessionmanager.TransactionRunnerJdbc;
+import ru.otus.jdbc.mapper.core.datasource.DriverManagerDataSource;
+import ru.otus.jdbc.demo.model.Client;
+import ru.otus.jdbc.demo.model.Manager;
+import ru.otus.jdbc.demo.service.DbServiceClientImpl;
+import ru.otus.jdbc.demo.service.DbServiceManagerImpl;
 import ru.otus.jdbc.mapper.DataTemplateJdbc;
 import ru.otus.jdbc.mapper.metadata.EntityClassMetaData;
 import ru.otus.jdbc.mapper.metadata.EntityClassMetaDataImpl;

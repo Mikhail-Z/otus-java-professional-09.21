@@ -1,6 +1,6 @@
-package ru.otus.core.repository.executor;
+package ru.otus.jdbc.mapper.core.repository.executor;
 
-import ru.otus.core.sessionmanager.DataBaseOperationException;
+import ru.otus.jdbc.mapper.core.sessionmanager.DataBaseOperationException;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
