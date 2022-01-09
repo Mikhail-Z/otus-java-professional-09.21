@@ -1,9 +1,13 @@
 package ru.calculator.after;
 
 public class Data {
-    private final int value;
+    private int value;
 
     public Data(int value) {
+        this.value = value;
+    }
+
+    public void setValue(int value) {
         this.value = value;
     }
 

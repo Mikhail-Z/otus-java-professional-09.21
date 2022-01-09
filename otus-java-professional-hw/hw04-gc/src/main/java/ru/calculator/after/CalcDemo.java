@@ -14,13 +14,14 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class CalcDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        System.in.read();
         long counter = 100_000_000;
         var summator = new Summator();
         long startTime = System.currentTimeMillis();
-
+        var data = new ru.calculator.after.Data(0);
         for (var idx = 0; idx < counter; idx++) {
-            var data = new ru.calculator.after.Data(idx);
+            data.setValue(idx);
             summator.calc(data);
 
             if (idx % 10_000_000 == 0) {
