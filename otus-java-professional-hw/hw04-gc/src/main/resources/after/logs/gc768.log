@@ -1,0 +1,278 @@
+[0.024s][debug][gc,heap] Minimum heap 805306368  Initial heap 805306368  Maximum heap 805306368
+[0.024s][info ][gc     ] Using G1
+[8,116s][debug][gc,heap] GC(0) Heap before GC invocations=0 (full 0):
+[8,116s][debug][gc,heap] GC(0)  garbage-first heap   total 786432K, used 56288K [0x00000000d0000000, 0x0000000100000000)
+[8,116s][debug][gc,heap] GC(0)   region size 1024K, 38 young (38912K), 0 survivors (0K)
+[8,116s][debug][gc,heap] GC(0)  Metaspace       used 7921K, committed 8192K, reserved 1056768K
+[8,116s][debug][gc,heap] GC(0)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,145s][info ][gc,heap] GC(0) Eden regions: 38->0(33)
+[8,145s][info ][gc,heap] GC(0) Survivor regions: 0->5(5)
+[8,145s][info ][gc,heap] GC(0) Old regions: 0->13
+[8,145s][info ][gc,heap] GC(0) Archive regions: 2->2
+[8,145s][info ][gc,heap] GC(0) Humongous regions: 16->16
+[8,145s][debug][gc,heap] GC(0) Heap after GC invocations=1 (full 0):
+[8,145s][debug][gc,heap] GC(0)  garbage-first heap   total 786432K, used 34832K [0x00000000d0000000, 0x0000000100000000)
+[8,145s][debug][gc,heap] GC(0)   region size 1024K, 5 young (5120K), 5 survivors (5120K)
+[8,145s][debug][gc,heap] GC(0)  Metaspace       used 7921K, committed 8192K, reserved 1056768K
+[8,145s][debug][gc,heap] GC(0)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,145s][info ][gc     ] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 54M->34M(768M) 28,913ms
+[8,229s][debug][gc,heap] GC(1) Heap before GC invocations=1 (full 0):
+[8,229s][debug][gc,heap] GC(1)  garbage-first heap   total 786432K, used 103440K [0x00000000d0000000, 0x0000000100000000)
+[8,229s][debug][gc,heap] GC(1)   region size 1024K, 38 young (38912K), 5 survivors (5120K)
+[8,229s][debug][gc,heap] GC(1)  Metaspace       used 7923K, committed 8192K, reserved 1056768K
+[8,229s][debug][gc,heap] GC(1)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,274s][info ][gc,heap] GC(1) Eden regions: 33->0(33)
+[8,274s][info ][gc,heap] GC(1) Survivor regions: 5->5(5)
+[8,274s][info ][gc,heap] GC(1) Old regions: 13->47
+[8,274s][info ][gc,heap] GC(1) Archive regions: 2->2
+[8,274s][info ][gc,heap] GC(1) Humongous regions: 50->50
+[8,274s][debug][gc,heap] GC(1) Heap after GC invocations=2 (full 0):
+[8,274s][debug][gc,heap] GC(1)  garbage-first heap   total 786432K, used 104722K [0x00000000d0000000, 0x0000000100000000)
+[8,274s][debug][gc,heap] GC(1)   region size 1024K, 5 young (5120K), 5 survivors (5120K)
+[8,274s][debug][gc,heap] GC(1)  Metaspace       used 7923K, committed 8192K, reserved 1056768K
+[8,274s][debug][gc,heap] GC(1)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,274s][info ][gc     ] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 101M->102M(768M) 45,155ms
+[8,343s][debug][gc,heap] GC(2) Heap before GC invocations=2 (full 0):
+[8,343s][debug][gc,heap] GC(2)  garbage-first heap   total 786432K, used 163090K [0x00000000d0000000, 0x0000000100000000)
+[8,343s][debug][gc,heap] GC(2)   region size 1024K, 38 young (38912K), 5 survivors (5120K)
+[8,343s][debug][gc,heap] GC(2)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,343s][debug][gc,heap] GC(2)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,375s][info ][gc,heap] GC(2) Eden regions: 33->0(33)
+[8,375s][info ][gc,heap] GC(2) Survivor regions: 5->5(5)
+[8,375s][info ][gc,heap] GC(2) Old regions: 47->81
+[8,375s][info ][gc,heap] GC(2) Archive regions: 2->2
+[8,375s][info ][gc,heap] GC(2) Humongous regions: 74->74
+[8,375s][debug][gc,heap] GC(2) Heap after GC invocations=3 (full 0):
+[8,375s][debug][gc,heap] GC(2)  garbage-first heap   total 786432K, used 164832K [0x00000000d0000000, 0x0000000100000000)
+[8,375s][debug][gc,heap] GC(2)   region size 1024K, 5 young (5120K), 5 survivors (5120K)
+[8,375s][debug][gc,heap] GC(2)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,375s][debug][gc,heap] GC(2)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,375s][info ][gc     ] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 159M->160M(768M) 32,155ms
+[8,462s][debug][gc,heap] GC(3) Heap before GC invocations=3 (full 0):
+[8,462s][debug][gc,heap] GC(3)  garbage-first heap   total 786432K, used 235488K [0x00000000d0000000, 0x0000000100000000)
+[8,462s][debug][gc,heap] GC(3)   region size 1024K, 38 young (38912K), 5 survivors (5120K)
+[8,462s][debug][gc,heap] GC(3)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,462s][debug][gc,heap] GC(3)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,482s][info ][gc,heap] GC(3) Eden regions: 33->0(33)
+[8,482s][info ][gc,heap] GC(3) Survivor regions: 5->5(5)
+[8,482s][info ][gc,heap] GC(3) Old regions: 81->110
+[8,482s][info ][gc,heap] GC(3) Archive regions: 2->2
+[8,482s][info ][gc,heap] GC(3) Humongous regions: 110->110
+[8,482s][debug][gc,heap] GC(3) Heap after GC invocations=4 (full 0):
+[8,482s][debug][gc,heap] GC(3)  garbage-first heap   total 786432K, used 230880K [0x00000000d0000000, 0x0000000100000000)
+[8,482s][debug][gc,heap] GC(3)   region size 1024K, 5 young (5120K), 5 survivors (5120K)
+[8,482s][debug][gc,heap] GC(3)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,482s][debug][gc,heap] GC(3)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,482s][info ][gc     ] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 229M->225M(768M) 19,744ms
+[8,525s][debug][gc,heap] GC(4) Heap before GC invocations=4 (full 0):
+[8,525s][debug][gc,heap] GC(4)  garbage-first heap   total 786432K, used 264672K [0x00000000d0000000, 0x0000000100000000)
+[8,525s][debug][gc,heap] GC(4)   region size 1024K, 38 young (38912K), 5 survivors (5120K)
+[8,525s][debug][gc,heap] GC(4)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,525s][debug][gc,heap] GC(4)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,548s][info ][gc,heap] GC(4) Eden regions: 33->0(33)
+[8,548s][info ][gc,heap] GC(4) Survivor regions: 5->5(5)
+[8,548s][info ][gc,heap] GC(4) Old regions: 110->144
+[8,548s][info ][gc,heap] GC(4) Archive regions: 2->2
+[8,548s][info ][gc,heap] GC(4) Humongous regions: 110->110
+[8,548s][debug][gc,heap] GC(4) Heap after GC invocations=5 (full 0):
+[8,548s][debug][gc,heap] GC(4)  garbage-first heap   total 786432K, used 266208K [0x00000000d0000000, 0x0000000100000000)
+[8,548s][debug][gc,heap] GC(4)   region size 1024K, 5 young (5120K), 5 survivors (5120K)
+[8,548s][debug][gc,heap] GC(4)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,548s][debug][gc,heap] GC(4)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,549s][info ][gc     ] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 258M->259M(768M) 23,077ms
+[8,594s][debug][gc,heap] GC(5) Heap before GC invocations=5 (full 0):
+[8,595s][debug][gc,heap] GC(5)  garbage-first heap   total 786432K, used 300000K [0x00000000d0000000, 0x0000000100000000)
+[8,595s][debug][gc,heap] GC(5)   region size 1024K, 38 young (38912K), 5 survivors (5120K)
+[8,595s][debug][gc,heap] GC(5)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,595s][debug][gc,heap] GC(5)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,617s][info ][gc,heap] GC(5) Eden regions: 33->0(33)
+[8,617s][info ][gc,heap] GC(5) Survivor regions: 5->5(5)
+[8,617s][info ][gc,heap] GC(5) Old regions: 144->179
+[8,617s][info ][gc,heap] GC(5) Archive regions: 2->2
+[8,617s][info ][gc,heap] GC(5) Humongous regions: 110->110
+[8,617s][debug][gc,heap] GC(5) Heap after GC invocations=6 (full 0):
+[8,617s][debug][gc,heap] GC(5)  garbage-first heap   total 786432K, used 301536K [0x00000000d0000000, 0x0000000100000000)
+[8,617s][debug][gc,heap] GC(5)   region size 1024K, 5 young (5120K), 5 survivors (5120K)
+[8,617s][debug][gc,heap] GC(5)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,617s][debug][gc,heap] GC(5)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,617s][info ][gc     ] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 292M->294M(768M) 22,763ms
+[8,668s][debug][gc,heap] GC(6) Heap before GC invocations=6 (full 0):
+[8,668s][debug][gc,heap] GC(6)  garbage-first heap   total 786432K, used 335328K [0x00000000d0000000, 0x0000000100000000)
+[8,668s][debug][gc,heap] GC(6)   region size 1024K, 38 young (38912K), 5 survivors (5120K)
+[8,668s][debug][gc,heap] GC(6)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,668s][debug][gc,heap] GC(6)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,675s][info ][gc,heap] GC(6) Eden regions: 33->0(33)
+[8,675s][info ][gc,heap] GC(6) Survivor regions: 5->5(5)
+[8,675s][info ][gc,heap] GC(6) Old regions: 179->185
+[8,675s][info ][gc,heap] GC(6) Archive regions: 2->2
+[8,675s][info ][gc,heap] GC(6) Humongous regions: 110->110
+[8,675s][debug][gc,heap] GC(6) Heap after GC invocations=7 (full 0):
+[8,675s][debug][gc,heap] GC(6)  garbage-first heap   total 786432K, used 307680K [0x00000000d0000000, 0x0000000100000000)
+[8,675s][debug][gc,heap] GC(6)   region size 1024K, 5 young (5120K), 5 survivors (5120K)
+[8,675s][debug][gc,heap] GC(6)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,675s][debug][gc,heap] GC(6)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,675s][info ][gc     ] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 327M->300M(768M) 7,352ms
+[8,719s][debug][gc,heap] GC(7) Heap before GC invocations=7 (full 0):
+[8,719s][debug][gc,heap] GC(7)  garbage-first heap   total 786432K, used 341472K [0x00000000d0000000, 0x0000000100000000)
+[8,719s][debug][gc,heap] GC(7)   region size 1024K, 38 young (38912K), 5 survivors (5120K)
+[8,719s][debug][gc,heap] GC(7)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,719s][debug][gc,heap] GC(7)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,741s][info ][gc,heap] GC(7) Eden regions: 33->0(33)
+[8,741s][info ][gc,heap] GC(7) Survivor regions: 5->5(5)
+[8,741s][info ][gc,heap] GC(7) Old regions: 185->219
+[8,741s][info ][gc,heap] GC(7) Archive regions: 2->2
+[8,741s][info ][gc,heap] GC(7) Humongous regions: 110->110
+[8,741s][debug][gc,heap] GC(7) Heap after GC invocations=8 (full 0):
+[8,741s][debug][gc,heap] GC(7)  garbage-first heap   total 786432K, used 342263K [0x00000000d0000000, 0x0000000100000000)
+[8,741s][debug][gc,heap] GC(7)   region size 1024K, 5 young (5120K), 5 survivors (5120K)
+[8,741s][debug][gc,heap] GC(7)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,741s][debug][gc,heap] GC(7)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,741s][info ][gc     ] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 333M->334M(768M) 22,660ms
+[8,786s][debug][gc,heap] GC(8) Heap before GC invocations=8 (full 0):
+[8,786s][debug][gc,heap] GC(8)  garbage-first heap   total 786432K, used 376055K [0x00000000d0000000, 0x0000000100000000)
+[8,786s][debug][gc,heap] GC(8)   region size 1024K, 38 young (38912K), 5 survivors (5120K)
+[8,786s][debug][gc,heap] GC(8)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,786s][debug][gc,heap] GC(8)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,808s][info ][gc,heap] GC(8) Eden regions: 33->0(34)
+[8,808s][info ][gc,heap] GC(8) Survivor regions: 5->5(5)
+[8,808s][info ][gc,heap] GC(8) Old regions: 219->253
+[8,808s][info ][gc,heap] GC(8) Archive regions: 2->2
+[8,808s][info ][gc,heap] GC(8) Humongous regions: 110->110
+[8,808s][debug][gc,heap] GC(8) Heap after GC invocations=9 (full 0):
+[8,808s][debug][gc,heap] GC(8)  garbage-first heap   total 786432K, used 377824K [0x00000000d0000000, 0x0000000100000000)
+[8,808s][debug][gc,heap] GC(8)   region size 1024K, 5 young (5120K), 5 survivors (5120K)
+[8,808s][debug][gc,heap] GC(8)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,808s][debug][gc,heap] GC(8)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,808s][info ][gc     ] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 367M->368M(768M) 22,338ms
+[8,856s][debug][gc,heap] GC(9) Heap before GC invocations=9 (full 0):
+[8,856s][debug][gc,heap] GC(9)  garbage-first heap   total 786432K, used 412640K [0x00000000d0000000, 0x0000000100000000)
+[8,856s][debug][gc,heap] GC(9)   region size 1024K, 39 young (39936K), 5 survivors (5120K)
+[8,856s][debug][gc,heap] GC(9)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,856s][debug][gc,heap] GC(9)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,863s][info ][gc,heap] GC(9) Eden regions: 34->0(50)
+[8,863s][info ][gc,heap] GC(9) Survivor regions: 5->5(5)
+[8,863s][info ][gc,heap] GC(9) Old regions: 253->257
+[8,863s][info ][gc,heap] GC(9) Archive regions: 2->2
+[8,863s][info ][gc,heap] GC(9) Humongous regions: 110->110
+[8,863s][debug][gc,heap] GC(9) Heap after GC invocations=10 (full 0):
+[8,863s][debug][gc,heap] GC(9)  garbage-first heap   total 786432K, used 381920K [0x00000000d0000000, 0x0000000100000000)
+[8,863s][debug][gc,heap] GC(9)   region size 1024K, 5 young (5120K), 5 survivors (5120K)
+[8,863s][debug][gc,heap] GC(9)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,863s][debug][gc,heap] GC(9)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,863s][info ][gc     ] GC(9) Pause Young (Concurrent Start) (G1 Evacuation Pause) 402M->372M(768M) 6,559ms
+[8,863s][info ][gc     ] GC(10) Concurrent Mark Cycle
+[8,885s][info ][gc     ] GC(10) Pause Remark 388M->78M(768M) 1,120ms
+[8,908s][info ][gc     ] GC(10) Pause Cleanup 95M->95M(768M) 0,089ms
+[8,911s][info ][gc     ] GC(10) Concurrent Mark Cycle 48,554ms
+[8,935s][debug][gc,heap] GC(11) Heap before GC invocations=11 (full 0):
+[8,935s][debug][gc,heap] GC(11)  garbage-first heap   total 786432K, used 115680K [0x00000000d0000000, 0x0000000100000000)
+[8,935s][debug][gc,heap] GC(11)   region size 1024K, 55 young (56320K), 5 survivors (5120K)
+[8,935s][debug][gc,heap] GC(11)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,935s][debug][gc,heap] GC(11)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,965s][info ][gc,heap] GC(11) Eden regions: 50->0(31)
+[8,965s][info ][gc,heap] GC(11) Survivor regions: 5->7(7)
+[8,965s][info ][gc,heap] GC(11) Old regions: 21->71
+[8,965s][info ][gc,heap] GC(11) Archive regions: 2->2
+[8,965s][info ][gc,heap] GC(11) Humongous regions: 36->36
+[8,965s][debug][gc,heap] GC(11) Heap after GC invocations=12 (full 0):
+[8,965s][debug][gc,heap] GC(11)  garbage-first heap   total 786432K, used 117215K [0x00000000d0000000, 0x0000000100000000)
+[8,965s][debug][gc,heap] GC(11)   region size 1024K, 7 young (7168K), 7 survivors (7168K)
+[8,965s][debug][gc,heap] GC(11)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[8,965s][debug][gc,heap] GC(11)   class space    used 893K, committed 1024K, reserved 1048576K
+[8,965s][info ][gc     ] GC(11) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 112M->114M(768M) 30,202ms
+[9,007s][debug][gc,heap] GC(12) Heap before GC invocations=12 (full 0):
+[9,007s][debug][gc,heap] GC(12)  garbage-first heap   total 786432K, used 148959K [0x00000000d0000000, 0x0000000100000000)
+[9,007s][debug][gc,heap] GC(12)   region size 1024K, 38 young (38912K), 7 survivors (7168K)
+[9,007s][debug][gc,heap] GC(12)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[9,007s][debug][gc,heap] GC(12)   class space    used 893K, committed 1024K, reserved 1048576K
+[9,028s][info ][gc,heap] GC(12) Eden regions: 31->0(65)
+[9,028s][info ][gc,heap] GC(12) Survivor regions: 7->5(5)
+[9,028s][info ][gc,heap] GC(12) Old regions: 71->104
+[9,028s][info ][gc,heap] GC(12) Archive regions: 2->2
+[9,028s][info ][gc,heap] GC(12) Humongous regions: 36->36
+[9,028s][debug][gc,heap] GC(12) Heap after GC invocations=13 (full 0):
+[9,028s][debug][gc,heap] GC(12)  garbage-first heap   total 786432K, used 148960K [0x00000000d0000000, 0x0000000100000000)
+[9,028s][debug][gc,heap] GC(12)   region size 1024K, 5 young (5120K), 5 survivors (5120K)
+[9,028s][debug][gc,heap] GC(12)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[9,028s][debug][gc,heap] GC(12)   class space    used 893K, committed 1024K, reserved 1048576K
+[9,028s][info ][gc     ] GC(12) Pause Young (Mixed) (G1 Evacuation Pause) 145M->145M(768M) 21,215ms
+[9,120s][debug][gc,heap] GC(13) Heap before GC invocations=13 (full 0):
+[9,120s][debug][gc,heap] GC(13)  garbage-first heap   total 786432K, used 215520K [0x00000000d0000000, 0x0000000100000000)
+[9,120s][debug][gc,heap] GC(13)   region size 1024K, 70 young (71680K), 5 survivors (5120K)
+[9,120s][debug][gc,heap] GC(13)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[9,120s][debug][gc,heap] GC(13)   class space    used 893K, committed 1024K, reserved 1048576K
+[9,148s][info ][gc,heap] GC(13) Eden regions: 65->0(378)
+[9,148s][info ][gc,heap] GC(13) Survivor regions: 5->9(9)
+[9,148s][info ][gc,heap] GC(13) Old regions: 104->149
+[9,148s][info ][gc,heap] GC(13) Archive regions: 2->2
+[9,148s][info ][gc,heap] GC(13) Humongous regions: 36->36
+[9,148s][debug][gc,heap] GC(13) Heap after GC invocations=14 (full 0):
+[9,148s][debug][gc,heap] GC(13)  garbage-first heap   total 786432K, used 199136K [0x00000000d0000000, 0x0000000100000000)
+[9,148s][debug][gc,heap] GC(13)   region size 1024K, 9 young (9216K), 9 survivors (9216K)
+[9,148s][debug][gc,heap] GC(13)  Metaspace       used 7948K, committed 8256K, reserved 1056768K
+[9,148s][debug][gc,heap] GC(13)   class space    used 893K, committed 1024K, reserved 1048576K
+[9,148s][info ][gc     ] GC(13) Pause Young (Normal) (G1 Evacuation Pause) 210M->194M(768M) 28,748ms
+[9,750s][debug][gc,heap] GC(14) Heap before GC invocations=14 (full 0):
+[9,750s][debug][gc,heap] GC(14)  garbage-first heap   total 786432K, used 573920K [0x00000000d0000000, 0x0000000100000000)
+[9,750s][debug][gc,heap] GC(14)   region size 1024K, 375 young (384000K), 9 survivors (9216K)
+[9,750s][debug][gc,heap] GC(14)  Metaspace       used 7955K, committed 8256K, reserved 1056768K
+[9,750s][debug][gc,heap] GC(14)   class space    used 895K, committed 1024K, reserved 1048576K
+[9,762s][info ][gc,heap] GC(14) Eden regions: 366->0(381)
+[9,762s][info ][gc,heap] GC(14) Survivor regions: 9->15(47)
+[9,762s][info ][gc,heap] GC(14) Old regions: 149->149
+[9,762s][info ][gc,heap] GC(14) Archive regions: 2->2
+[9,763s][info ][gc,heap] GC(14) Humongous regions: 36->36
+[9,763s][debug][gc,heap] GC(14) Heap after GC invocations=15 (full 0):
+[9,763s][debug][gc,heap] GC(14)  garbage-first heap   total 786432K, used 205280K [0x00000000d0000000, 0x0000000100000000)
+[9,763s][debug][gc,heap] GC(14)   region size 1024K, 15 young (15360K), 15 survivors (15360K)
+[9,763s][debug][gc,heap] GC(14)  Metaspace       used 7955K, committed 8256K, reserved 1056768K
+[9,763s][debug][gc,heap] GC(14)   class space    used 895K, committed 1024K, reserved 1048576K
+[9,763s][info ][gc     ] GC(14) Pause Young (Normal) (G1 Evacuation Pause) 560M->200M(768M) 12,659ms
+[10,275s][debug][gc,heap] GC(15) Heap before GC invocations=15 (full 0):
+[10,275s][debug][gc,heap] GC(15)  garbage-first heap   total 786432K, used 595424K [0x00000000d0000000, 0x0000000100000000)
+[10,275s][debug][gc,heap] GC(15)   region size 1024K, 396 young (405504K), 15 survivors (15360K)
+[10,275s][debug][gc,heap] GC(15)  Metaspace       used 7955K, committed 8256K, reserved 1056768K
+[10,275s][debug][gc,heap] GC(15)   class space    used 895K, committed 1024K, reserved 1048576K
+[10,324s][info ][gc,heap] GC(15) Eden regions: 381->0(54)
+[10,325s][info ][gc,heap] GC(15) Survivor regions: 15->50(50)
+[10,325s][info ][gc,heap] GC(15) Old regions: 149->192
+[10,325s][info ][gc,heap] GC(15) Archive regions: 2->2
+[10,325s][info ][gc,heap] GC(15) Humongous regions: 36->36
+[10,325s][debug][gc,heap] GC(15) Heap after GC invocations=16 (full 0):
+[10,325s][debug][gc,heap] GC(15)  garbage-first heap   total 786432K, used 285436K [0x00000000d0000000, 0x0000000100000000)
+[10,325s][debug][gc,heap] GC(15)   region size 1024K, 50 young (51200K), 50 survivors (51200K)
+[10,325s][debug][gc,heap] GC(15)  Metaspace       used 7955K, committed 8256K, reserved 1056768K
+[10,325s][debug][gc,heap] GC(15)   class space    used 895K, committed 1024K, reserved 1048576K
+[10,325s][info ][gc     ] GC(15) Pause Young (Normal) (G1 Evacuation Pause) 581M->278M(768M) 49,508ms
+[10,403s][debug][gc,heap] GC(16) Heap before GC invocations=16 (full 0):
+[10,403s][debug][gc,heap] GC(16)  garbage-first heap   total 786432K, used 340732K [0x00000000d0000000, 0x0000000100000000)
+[10,403s][debug][gc,heap] GC(16)   region size 1024K, 104 young (106496K), 50 survivors (51200K)
+[10,403s][debug][gc,heap] GC(16)  Metaspace       used 7960K, committed 8320K, reserved 1056768K
+[10,403s][debug][gc,heap] GC(16)   class space    used 895K, committed 1088K, reserved 1048576K
+[10,428s][info ][gc,heap] GC(16) Eden regions: 54->0(264)
+[10,428s][info ][gc,heap] GC(16) Survivor regions: 50->13(13)
+[10,428s][info ][gc,heap] GC(16) Old regions: 192->226
+[10,428s][info ][gc,heap] GC(16) Archive regions: 2->2
+[10,428s][info ][gc,heap] GC(16) Humongous regions: 36->36
+[10,428s][debug][gc,heap] GC(16) Heap after GC invocations=17 (full 0):
+[10,428s][debug][gc,heap] GC(16)  garbage-first heap   total 786432K, used 282592K [0x00000000d0000000, 0x0000000100000000)
+[10,428s][debug][gc,heap] GC(16)   region size 1024K, 13 young (13312K), 13 survivors (13312K)
+[10,428s][debug][gc,heap] GC(16)  Metaspace       used 7960K, committed 8320K, reserved 1056768K
+[10,428s][debug][gc,heap] GC(16)   class space    used 895K, committed 1088K, reserved 1048576K
+[10,428s][info ][gc     ] GC(16) Pause Young (Normal) (G1 Evacuation Pause) 332M->275M(768M) 25,592ms
+[10,787s][debug][gc,heap] GC(17) Heap before GC invocations=17 (full 0):
+[10,787s][debug][gc,heap] GC(17)  garbage-first heap   total 786432K, used 552928K [0x00000000d0000000, 0x0000000100000000)
+[10,787s][debug][gc,heap] GC(17)   region size 1024K, 277 young (283648K), 13 survivors (13312K)
+[10,787s][debug][gc,heap] GC(17)  Metaspace       used 7960K, committed 8320K, reserved 1056768K
+[10,787s][debug][gc,heap] GC(17)   class space    used 895K, committed 1088K, reserved 1048576K
+[10,795s][info ][gc,heap] GC(17) Eden regions: 264->0(293)
+[10,795s][info ][gc,heap] GC(17) Survivor regions: 13->9(35)
+[10,795s][info ][gc,heap] GC(17) Old regions: 226->226
+[10,795s][info ][gc,heap] GC(17) Archive regions: 2->2
+[10,795s][info ][gc,heap] GC(17) Humongous regions: 36->36
+[10,795s][debug][gc,heap] GC(17) Heap after GC invocations=18 (full 0):
+[10,795s][debug][gc,heap] GC(17)  garbage-first heap   total 786432K, used 278492K [0x00000000d0000000, 0x0000000100000000)
+[10,795s][debug][gc,heap] GC(17)   region size 1024K, 9 young (9216K), 9 survivors (9216K)
+[10,795s][debug][gc,heap] GC(17)  Metaspace       used 7960K, committed 8320K, reserved 1056768K
+[10,795s][debug][gc,heap] GC(17)   class space    used 895K, committed 1088K, reserved 1048576K
+[10,795s][info ][gc     ] GC(17) Pause Young (Normal) (G1 Evacuation Pause) 539M->271M(768M) 8,199ms
