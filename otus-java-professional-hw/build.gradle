@@ -20,6 +20,8 @@ allprojects {
             }
 
             dependency "com.google.guava:guava:${Versions.guava}"
+            dependency("org.testcontainers:junit-jupiter:${Versions.testcontainers}")
+            dependency("org.testcontainers:postgresql:${Versions.testcontainers}")
         }
     }
 }
