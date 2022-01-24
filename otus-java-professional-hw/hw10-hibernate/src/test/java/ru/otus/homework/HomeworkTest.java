@@ -1,6 +1,5 @@
 package ru.otus.homework;
 
-import org.hibernate.Hibernate;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -52,7 +51,7 @@ class HomeworkTest {
         assertThat(tables).hasSize(3);
     }
 
-    @Test
+        @Test
     public void testHomeworkRequirementsForUpdatesCount() {
         applyCustomSqlStatementLogger(new SqlStatementLogger(true, false, false, 0) {
             @Override
@@ -62,15 +61,19 @@ class HomeworkTest {
             }
         });
 
-        var client = new Client(null, "Vasya", new Address(null, "AnyStreet"), List.of(new Phone(null, "13-555-22")));
+        var client = new Client(null, "Vasya", new Address(null, "AnyStreet"),
+            List.of(new Phone(null, "13-555-22"), new Phone(null, "14-666-333")));
         try (var session = sessionFactory.openSession()) {
             session.getTransaction().begin();
             session.persist(client);
             session.getTransaction().commit();
 
             session.clear();
-            var loadedClient = session.find(Client.class, 1L);
-            assertThat(loadedClient).usingRecursiveComparison().isEqualTo(client);
+
+            var loadedClient = session.find(Client.class, 1L).clone();
+            assertThat(loadedClient)
+                .usingRecursiveComparison()
+                .isEqualTo(client);
         }
     }
 
@@ -115,4 +118,5 @@ class HomeworkTest {
             e.printStackTrace();
         }
     }
+
 }

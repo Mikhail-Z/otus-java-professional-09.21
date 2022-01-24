@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "address")
-public class Address {
+public class Address implements Cloneable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -22,5 +22,10 @@ public class Address {
     }
 
     public Address() {
+    }
+
+    @Override
+    protected Address clone() {
+        return new Address(id, street);
     }
 }

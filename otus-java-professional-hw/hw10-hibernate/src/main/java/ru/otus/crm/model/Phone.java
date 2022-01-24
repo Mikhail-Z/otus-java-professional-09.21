@@ -1,11 +1,10 @@
 package ru.otus.crm.model;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "phone")
-public class Phone {
+public class Phone implements Cloneable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -13,7 +12,7 @@ public class Phone {
     @Column(name = "number")
     private String number;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Client client;
 
     public Phone(Long id, String number) {
@@ -65,5 +64,10 @@ public class Phone {
                 ", number='" + number + '\'' +
                 ", client=" + client +
                 '}';
+    }
+
+    @Override
+    protected Phone clone() {
+        return new Phone(id, number);
     }
 }

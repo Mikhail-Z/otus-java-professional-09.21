@@ -19,7 +19,7 @@ public class Client implements Cloneable {
     @Column(name = "name")
     private String name;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;
 
@@ -51,7 +51,9 @@ public class Client implements Cloneable {
 
     @Override
     public Client clone() {
-        return new Client(this.id, this.name, this.address, this.phones);
+        var address = this.address != null ? this.address.clone() : null;
+        return new Client(
+                this.id, this.name, address, this.phones.stream().map(Phone::clone).toList());
     }
 
     public Long getId() {
