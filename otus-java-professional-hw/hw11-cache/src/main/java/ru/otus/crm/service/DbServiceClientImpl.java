@@ -40,10 +40,7 @@ public class DbServiceClientImpl implements DBServiceClient {
             return clientCloned;
         });
 
-        var cachedClient = cache.get(client.getId());
-        if (cachedClient != null) {
-            cache.put(savedClient.getId(), savedClient);
-        }
+        cache.put(savedClient.getId(), savedClient);
 
         return savedClient;
     }
