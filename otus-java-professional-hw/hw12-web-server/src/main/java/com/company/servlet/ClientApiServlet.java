@@ -20,8 +20,6 @@ import java.io.InputStreamReader;
 
 public class ClientApiServlet extends HttpServlet {
 
-    private static final int ID_PATH_PARAM_POSITION = 1;
-
     private final ClientService clientService;
     private final Gson gson;
 
@@ -47,7 +45,7 @@ public class ClientApiServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        var body = getBody(request);
+        var body = readBody(request);
         var mapper = new ObjectMapper();
         ClientInfoDTO clientInfo = mapper.readValue(body, ClientInfoDTO.class);
         var client = new Client(
@@ -57,11 +55,10 @@ public class ClientApiServlet extends HttpServlet {
         clientService.saveClient(client);
     }
 
-    private String getBody(HttpServletRequest request) throws IOException {
+    private String readBody(HttpServletRequest request) throws IOException {
         var stringBuilder = new StringBuilder();
         BufferedReader bufferedReader = null;
-        try {
-            var inputStream = request.getInputStream();
+        try (var inputStream = request.getInputStream()) {
             if (inputStream != null) {
                 bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 char[] charBuffer = new char[128];
@@ -69,12 +66,7 @@ public class ClientApiServlet extends HttpServlet {
                 while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
                     stringBuilder.append(charBuffer, 0, bytesRead);
                 }
-            } else {
-                stringBuilder.append("");
             }
-        }
-        catch (IOException e) {
-            throw e;
         }
         finally {
             if (bufferedReader != null) {
