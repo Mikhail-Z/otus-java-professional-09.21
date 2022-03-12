@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clients</title>
+</head>
+<body>
+<form id="add-new-client-form">
+    <div class="input-group">
+        <label for="client-name-input">Name</label>
+        <input id="client-name-input" name="clientName" type="text">
+    </div>
+    <div class="input-group">
+        <label for="address-input">Address</label>
+        <input id="address-input" name="street" type="text">
+    </div>
+    <button id="add-client-phone-btn" type="button">Add phone</button>
+    <div class="input-group phone-input-group">
+        <label for="phone-input">Phone</label>
+        <input class="phone-input" id="phone-input" name="phone" type="text">
+        <button class="delete-phone-btn" type="button">-</button>
+    </div>
+    <button id="add-client-submit-btn" type="button">Add new client</button>
+</form>
+
+<h3>All clients</h3>
+<div>
+    <ul id="client-list">
+        <#list clients as client>
+        <li>${client.name}</li>
+        </#list>
+    </ul>
+</div>
+<#noparse>
+<script type='text/javascript'>
+    var addPhoneInput = function () {
+        var clientForm = document.getElementById("add-new-client-form")
+        var divNode = document.createElement("div")
+        divNode.className = "input-group phone-input-group"
+
+        var newLabelNode = document.createElement("label")
+        newLabelNode.setAttribute("for", "phone-input")
+        newLabelNode.innerText = "Phone"
+
+        var newInputNode = document.createElement("input")
+        newInputNode.className = "phone-input"
+        newInputNode.id = "phone-input"
+        newInputNode.setAttribute("name", "phone")
+        newInputNode.setAttribute("type", "text")
+
+        var newDeleteButtonNode = document.createElement("button")
+        newDeleteButtonNode.className = "delete-phone-btn"
+        newDeleteButtonNode.type = "button"
+        newDeleteButtonNode.innerText = "-"
+        newDeleteButtonNode.onclick = deletePhoneInput
+
+        divNode.appendChild(newLabelNode)
+        divNode.appendChild(newInputNode)
+        divNode.appendChild(newDeleteButtonNode)
+
+        var submitBtn = document.getElementById("add-client-submit-btn")
+        clientForm.insertBefore(divNode, submitBtn)
+    }
+    document.querySelector("#add-client-phone-btn").addEventListener("click", addPhoneInput)
+
+    var deletePhoneInput = function (event) {
+        event.target.parentNode.remove()
+    }
+    document.querySelector(".delete-phone-btn").addEventListener("click", deletePhoneInput)
+
+
+    var saveClient = async function ()
+    {
+        console.log("in save client")
+        var clientName = document.getElementById("client-name-input").value
+        var clientAddress = document.getElementById("address-input").value
+        var clientPhones = [].slice.call(document.getElementsByClassName("phone-input")).map(container => container.value)
+        console.log(clientName)
+        console.log(clientAddress)
+        console.log(clientPhones)
+        var data = {
+            "name": clientName,
+            "address": clientAddress,
+            "phones": clientPhones
+        }
+        await fetch("/api/client", {
+            method: "POST",
+            body: JSON.stringify(data)
+        }).then(async (response) => {
+            if (response.ok) {
+                await fetch ("/api/client").then((response) => {
+                    if (response.ok) {
+                        response.json().then(clients => {
+                            alert("new client added successfully")
+                            updateClientList(clients)
+                            clearInputValues()
+                        });
+                    } else {
+                        alert(`Error while getting updated clients list: ${response.statusText}. Please, reload the page.`)
+                    }
+                })
+            } else {
+                alert(`Error while saving new client: ${response.statusText}`)
+            }
+        })
+    }
+
+    document.querySelector("#add-client-submit-btn").addEventListener("click", saveClient)
+
+    var updateClientList = function (clients) {
+        var clientUl = document.getElementById("client-list")
+        console.log(clients)
+        clientsHTML = clients.map(client => `<li>${client.name}</li>`).join("\n")
+        clientUl.innerHTML = clientsHTML
+    }
+
+    var clearInputValues = function() {
+        document.getElementById("client-name-input").value = ""
+        document.getElementById("address-input").value = ""
+        document.getElementById("phone-input").value = ""
+        var phoneInputGroups = document.getElementsByClassName("phone-input-group")
+        console.log(phoneInputGroups[0])
+        console.log(phoneInputGroups.length)
+        phoneInputGroups[1].remove()
+    }
+</script>
+</#noparse>
+</body>
+</html>
