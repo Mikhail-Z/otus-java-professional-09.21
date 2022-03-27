@@ -4,7 +4,6 @@ import ru.otus.appcontainer.AppComponentsContainerImpl;
 import ru.otus.appcontainer.api.AppComponentsContainer;
 import ru.otus.config.AppConfig;
 import ru.otus.services.GameProcessor;
-import ru.otus.services.GameProcessorImpl;
 
 /*
 В классе AppComponentsContainerImpl реализовать обработку, полученной в конструкторе конфигурации,
@@ -21,8 +20,19 @@ PS Приложение представляет собой тренажер т�
 */
 
 public class App {
+    class A {
+
+    }
+    interface IA {}
+    class B  extends A implements IA {}
+
 
     public static void main(String[] args) throws Exception {
+
+        System.out.println(B.class.isAssignableFrom(IA.class));
+        System.out.println(B.class.isAssignableFrom(A.class));
+        System.out.println(A.class.isAssignableFrom(B.class));
+        System.out.println(IA.class.isAssignableFrom(B.class));
         // Опциональные варианты
         //AppComponentsContainer container = new AppComponentsContainerImpl(AppConfig1.class, AppConfig2.class);
 
